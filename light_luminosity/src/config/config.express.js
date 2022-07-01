@@ -7,6 +7,7 @@ exports.init = async (app) => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  app.use("/", require("../routes/route.auth"));
+  app.use("/humidity", require("../routes/route.humidity"));
+  app.use("/luminosity", require("../routes/route.luminosity"));
   console.log("Express Initialized.");
 };

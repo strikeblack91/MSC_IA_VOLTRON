@@ -4,7 +4,7 @@ const exceptionHelper = require("../helpers/helper.exception");
 exports.login = async function (req, res) {
   try {
     const { email, password } = req.body;
-    const accessToken = await authService.login(email, phone, password);
+    const accessToken = await authService.login(email, password);
     return res.status(200).json({
       message: "Utilisateur connecté",
       accessToken: accessToken,
