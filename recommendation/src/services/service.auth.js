@@ -1,21 +1,13 @@
 const jwt = require("jsonwebtoken");
 
 exports.authService = class AuthService {
-  static async signup(email, password) {}
+  static users = [];
 
-  static async login(email, password) {
-    const accessToken = this.generateAccessToken();
-    return accessToken;
+  static async signup(email, password, tags) {
+    this.users.push({
+      email,
+      password,
+      tags,
+    });
   }
-
-  static generateAccessToken = function () {
-    console.log(process.env.ACCESS_TOKEN);
-    return jwt.sign(
-      {},
-      process.env.ACCESS_TOKEN,
-      {
-        expiresIn: "30d",
-      }
-    );
-  };
 };

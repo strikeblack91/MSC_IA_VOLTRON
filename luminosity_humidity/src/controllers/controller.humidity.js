@@ -6,7 +6,7 @@ exports.update = async function (req, res) {
     const { humidity } = req.body;
     const mustBeColder = await humidityService.update(humidity);
     return res.status(200).json({
-      message: mustBeColder ? "Abbaissement en cours" : "Augmentation en cours",
+      message: mustBeColder ? "Diminution" : "Augmentation",
     });
   } catch (e) {
     return exceptionHelper.handle(e, res);

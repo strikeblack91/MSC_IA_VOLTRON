@@ -6,7 +6,7 @@ exports.update = async function (req, res) {
     const { luminosity } = req.body;
     const mustBeColder = await luminosityService.update(luminosity);
     return res.status(200).json({
-      message: mustBeColder ? "Abbaissement en cours" : "Augmentation en cours",
+      message: mustBeColder ? "Diminution" : "Augmentation",
     });
   } catch (e) {
     return exceptionHelper.handle(e, res);

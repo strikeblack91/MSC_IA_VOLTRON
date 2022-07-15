@@ -19,7 +19,7 @@ services:
       PORT: 8081
   light_luminosity:
     build:
-      context: ./light_luminosity
+      context: ./luminosity_humidity
     ports:
       - "8082:8082"
     environment:

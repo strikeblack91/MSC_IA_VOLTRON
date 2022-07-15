@@ -1,5 +1,6 @@
 exports.temperatureService = class TemperatureService {
   static temperature = 20;
+
   static async define(temperature) {
     this.temperature = temperature;
   }
